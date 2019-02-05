@@ -502,6 +502,126 @@
             "time": "2017-03-10T08:29:45+00:00"
         },
         {
+            "name": "composer/installers",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "time": "2018-08-27T06:10:37+00:00"
+        },
+        {
             "name": "composer/semver",
             "version": "1.4.2",
             "source": {
@@ -980,15 +1100,16 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:itnova/module-deploy-dedicated.git",
-                "reference": "1ce0dd11569928922e347ee0a3534d961426c7e8"
+                "reference": "cd35960176d8439b0af86034ba6f51c5267d1425"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itnova/module-deploy-dedicated/zipball/1ce0dd11569928922e347ee0a3534d961426c7e8",
-                "reference": "1ce0dd11569928922e347ee0a3534d961426c7e8",
+                "url": "https://api.github.com/repos/itnova/module-deploy-dedicated/zipball/cd35960176d8439b0af86034ba6f51c5267d1425",
+                "reference": "cd35960176d8439b0af86034ba6f51c5267d1425",
                 "shasum": ""
             },
             "require": {
+                "composer/installers": "~1.0",
                 "magento/magento-composer-installer": "*",
                 "magento/magento2-base": "^2.2.6",
                 "php": "~7.1.0"
@@ -996,6 +1117,10 @@
             "type": "magento2-module",
             "extra": {
                 "map": [
+                    [
+                        "*",
+                        "Kega/DeployDedicated"
+                    ],
                     [
                         "bin/deploy-dedicated",
                         "../../bin/deploy-dedicated"
@@ -1006,7 +1131,8 @@
                         "mask": "0755",
                         "path": "bin/deploy-dedicated"
                     }
-                ]
+                ],
+                "magento-force": "override"
             },
             "autoload": {
                 "files": [
@@ -1027,10 +1153,10 @@
             ],
             "description": "Module for deployment",
             "support": {
-                "source": "https://github.com/itnova/module-deploy-dedicated/tree/1.0.0",
+                "source": "https://github.com/itnova/module-deploy-dedicated/tree/master",
                 "issues": "https://github.com/itnova/module-deploy-dedicated/issues"
             },
-            "time": "2018-12-04T16:09:55+00:00"
+            "time": "2019-02-05T14:32:21+00:00"
         },
         {
             "name": "klarna/module-core",

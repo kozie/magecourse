@@ -1,0 +1,42 @@
+{
+    "name": "kega/module-deploy-dedicated",
+    "description": "Module for deployment",
+    "require": {
+        "php": "~7.1.0",
+        "magento/magento-composer-installer": "*",
+        "magento/magento2-base": "^2.2.6",
+        "composer/installers": "~1.0"
+    },
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Kega",
+            "email": "webshop@kega.nl"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Kega\\DeployDedicated\\": ""
+        }
+    },
+    "extra": {
+        "map": [
+            [ "*", "Kega\/DeployDedicated" ],
+            [
+                "bin/deploy-dedicated",
+                "../../bin/deploy-dedicated"
+            ]
+        ],
+        "chmod": [
+            {
+                "mask": "0755",
+                "path": "bin/deploy-dedicated"
+            }
+        ],
+        "magento-force": "override"
+    }
+}

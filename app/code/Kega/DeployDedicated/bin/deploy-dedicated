@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+
+if (PHP_SAPI !== 'cli') {
+    echo 'bin/deploy must be run as a CLI application';
+    exit(1);
+}
+
+try {
+    require __DIR__ . '/../app/bootstrap.php';
+} catch (\Exception $e) {
+    echo 'Autoload error: ' . $e->getMessage();
+    exit(1);
+}
+try {
+    $handler = new \Magento\Framework\App\ErrorHandler();
+    set_error_handler([$handler, 'handler']);
+    $application = new Application('Kega Deployer', '1.0.0');
+    $application->add(new \Kega\DeployDedicated\Console\Command\DeployAdminCommand());
+    $application->add(new \Kega\DeployDedicated\Console\Command\DeployWebnodeCommand());
+    $application->run();
+} catch (\Exception $e) {
+    while ($e) {
+        echo $e->getMessage();
+        echo $e->getTraceAsString();
+        echo "\n\n";
+        $e = $e->getPrevious();
+    }
+    exit(Cli::RETURN_FAILURE);
+}
